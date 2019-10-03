@@ -28,8 +28,9 @@ fs.readFile(numfile, 'utf8', (err, content) => {
     if (result[2] > 32767 || result[3] < -32768) {
         console.log('Must be [-32768, 32767)');
     } else {
-        /* форматировать и вывести результаты */
-        console.log(Math.round(result * 100));
+        for (i in result) {
+            console.log(result[i].toFixed(2));
+        }
     }
 
 });
